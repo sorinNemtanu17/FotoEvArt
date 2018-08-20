@@ -17,6 +17,38 @@
 
   <!-- icon -->
 	<link rel="icon" href="_images/logo.jpg" type="image/x-icon">
+
+  <script src="_lightbox/lightbox.min.js"></script>
+  <script>
+      lightbox.option({
+        'resizeDuration': 100,
+        'wrapAround': true
+      })
+  </script>
+  <script src="_js/smooth-scroll.js"></script>
+  <script src="_js/wow.min.js"></script>
+  <script>
+      new WOW().init(
+        {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0,          // default
+          mobile:       true,       // default
+          live:         true        // default
+        }
+      );
+      $(function(){
+
+        $('carousel-control-prev','carousel-control-next').on('click',function(){
+          $('carousel-control-prev','carousel-control-next').addClass('wow fadeInLeftBig')
+            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+             function(){
+               $(this).removeClass('wow fadeInLeftBig');
+             });
+        })
+      })
+  </script>
+
 </head>
 <body id="Acasa">
 
